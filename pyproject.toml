@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ut-lecture-parser"
+version = "0.1.0"
+description = "Export UT Austin Lectures Online transcripts, MP4 recordings, and AI context"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+browser = ["playwright>=1.49,<2"]
+speech = ["openai-whisper"]
+
+[project.scripts]
+lectureparse = "lecture_parser:main"
+
+[tool.setuptools]
+packages = ["lectureparse"]
+py-modules = ["lecture_parser"]
